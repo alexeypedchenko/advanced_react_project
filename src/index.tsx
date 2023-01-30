@@ -1,10 +1,4 @@
 import { render } from 'react-dom'
-import './index.scss'
+import App from './App'
 
-// const index = () => {
-//   return (
-//     <div>index</div>
-//   )
-// }
-
-render(<div>index</div>, document.getElementById('root'))
+render(<App />, document.getElementById('root'))
