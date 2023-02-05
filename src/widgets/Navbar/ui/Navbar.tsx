@@ -1,11 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import classes from './Navbar.module.scss'
 
-export const Navbar = () => {
+interface NavbarProps {
+  className?: string
+}
+
+export const Navbar = ({ className }: NavbarProps) => {
   return (
-    <div style={{ display: 'flex', gap: 4, marginBottom: 20 }}>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+    <div className={classNames(classes.Navbar, {}, [className])}>
+      <div className={classes.links}>
+        <AppLink theme={AppLinkTheme.SECONDARY} to="/">
+          Home
+        </AppLink>
+        <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
+          About
+        </AppLink>
+      </div>
     </div>
   )
 }
