@@ -4,12 +4,15 @@ import App from 'app/App';
 import { ThemePropvider } from 'app/providers/ThemeProvider';
 // i18n
 import 'shared/config/i18n/i18n';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 render(
   <BrowserRouter>
-    <ThemePropvider>
-      <App />
-    </ThemePropvider>
+    <ErrorBoundary>
+      <ThemePropvider>
+        <App />
+      </ThemePropvider>
+    </ErrorBoundary>
   </BrowserRouter>,
   document.getElementById('root'),
 );
