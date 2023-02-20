@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path'
+
 export default {
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
@@ -11,14 +13,16 @@ export default {
   testEnvironment: 'jsdom',
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    'node_modules',
-  ],
+  moduleDirectories: ['node_modules'],
+
+  // fix jest absolute import
+  modulePaths: ['<rootDir>src'],
+
+  // added setup file
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -36,9 +40,13 @@ export default {
   rootDir: '../../',
 
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+
+  // fix scss modules in react components
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -191,4 +199,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
