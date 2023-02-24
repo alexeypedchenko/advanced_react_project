@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { Button, ThemeButton } from './Button'
+import { Button, ButtonTheme, ButtonSize } from './Button'
 
 export default {
   title: 'shared/Button',
@@ -17,24 +17,86 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  children: 'Text',
+  children: 'Primary',
 }
 
 export const Clear = Template.bind({})
 Clear.args = {
-  children: 'Text',
-  theme: ThemeButton.CLEAR,
+  children: 'Clear',
+  theme: ButtonTheme.CLEAR,
 }
 
 export const Outline = Template.bind({})
 Outline.args = {
-  children: 'Text',
-  theme: ThemeButton.OUTLINE,
+  children: 'Outline',
+  theme: ButtonTheme.OUTLINE,
+}
+
+export const OutlineM = Template.bind({})
+OutlineM.args = {
+  children: 'Outline M',
+  theme: ButtonTheme.OUTLINE,
+  size: ButtonSize.M,
+}
+export const OutlineL = Template.bind({})
+OutlineL.args = {
+  children: 'Outline L',
+  theme: ButtonTheme.OUTLINE,
+  size: ButtonSize.L,
+}
+export const OutlineXL = Template.bind({})
+OutlineXL.args = {
+  children: 'Outline XL',
+  theme: ButtonTheme.OUTLINE,
+  size: ButtonSize.XL,
 }
 
 export const OutlineDark = Template.bind({})
 OutlineDark.args = {
-  children: 'Text',
-  theme: ThemeButton.OUTLINE,
+  children: 'Outline Dark',
+  theme: ButtonTheme.OUTLINE,
 }
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Background = Template.bind({})
+Background.args = {
+  children: 'Background Button',
+  theme: ButtonTheme.BACKGROUND,
+}
+
+export const BackgroundInverted = Template.bind({})
+BackgroundInverted.args = {
+  children: 'Inverted Background Button',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+}
+
+export const Square = Template.bind({})
+Square.args = {
+  children: 'sq',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  square: true,
+}
+
+export const Medium = Template.bind({})
+Medium.args = {
+  children: 'md',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  square: true,
+  size: ButtonSize.M,
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  children: 'lg',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  square: true,
+  size: ButtonSize.L,
+}
+
+export const ExtraLarge = Template.bind({})
+ExtraLarge.args = {
+  children: 'xl',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+  square: true,
+  size: ButtonSize.XL,
+}

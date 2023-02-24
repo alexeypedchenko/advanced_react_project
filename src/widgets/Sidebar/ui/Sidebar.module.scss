@@ -19,3 +19,34 @@
   position: absolute;
   bottom: 20px;
 }
+
+.collapseBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  transform: translate(100%, 0);
+  z-index: 10;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+
+  svg {
+    fill: currentColor;
+  }
+
+  .collapsed & {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
