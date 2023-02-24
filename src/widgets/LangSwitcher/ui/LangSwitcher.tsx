@@ -20,7 +20,7 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
       theme={ButtonTheme.CLEAR}
       onClick={toggle}
     >
-      {short ? i18n.language.toLocaleUpperCase() : t('lang')}
+      {short ? String(i18n?.language || '').toLocaleUpperCase() : t('lang')}
     </Button>
   )
 }
