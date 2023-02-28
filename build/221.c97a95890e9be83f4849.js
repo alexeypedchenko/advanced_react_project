@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkadvanced_react_project=self.webpackChunkadvanced_react_project||[]).push([[221],{221:(e,a,t)=>{t.r(a),t.d(a,{default:()=>n});var c=t(893),r=t(327);const n=function(){var e=(0,r.$)("about").t;return(0,c.jsx)("div",{children:e("about-page")})}}}]);
