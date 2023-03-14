@@ -1,0 +1,15 @@
+.SidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+.сollapsed {
+  justify-content: center;
+  padding-left: 0;
+}
