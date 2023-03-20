@@ -43,6 +43,7 @@ module.exports = {
     'max-len': ['error', { ignoreComments: true }],
     'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
     'react-hooks/exhaustive-deps': 'warn', // Проверяем зависимости эффекта
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
