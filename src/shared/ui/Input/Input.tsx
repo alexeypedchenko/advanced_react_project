@@ -40,7 +40,6 @@ export const Input = memo((props: InputProps) => {
 
   useEffect(() => {
     if (autoFocus) {
-      console.log(autoFocus)
       setIsFocused(true)
       ref.current?.focus()
     }

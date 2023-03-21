@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { memo, useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
 import { LoginModal } from 'features/AuthByUsername'
@@ -10,7 +10,7 @@ interface NavbarProps {
   className?: string
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false)
   const authData = useSelector(getUserAuthData)
   const dispatch = useDispatch()
@@ -37,7 +37,10 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <div className={classNames(classes.Navbar, {}, [className])}>
-      <LoginModal isOpen={isAuthModal} onClose={setIsAuthModal} />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={setIsAuthModal} />
+      )}
+
       <div className={classes.links}>
         <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
           Войти
@@ -45,4 +48,4 @@ export const Navbar = ({ className }: NavbarProps) => {
       </div>
     </div>
   )
-}
+})
