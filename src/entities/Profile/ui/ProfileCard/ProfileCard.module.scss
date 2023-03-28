@@ -2,15 +2,21 @@
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
 }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
+.editing {
+  border-color: var(--inverted-primary-color);
 }
 .data {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.isLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.avatar {
+  display: flex;
+  justify-content: center;
 }

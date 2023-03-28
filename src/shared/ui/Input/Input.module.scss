@@ -9,11 +9,15 @@
   position: relative;
 }
 .input {
+  width: 100%;
   background: transparent;
   border: none;
   outline: none;
-  color: transparent;
-  text-shadow: 0 0 0 var(--primary-color);
+  color: var(--primary-color);
+
+  // for hide caret
+  // color: transparent;
+  // text-shadow: 0 0 0 var(--primary-color);
 
   &:focus{
     outline: none;
@@ -29,6 +33,10 @@
 
   // animation: name duration timing-function delay iteration-count direction fill-mode;
   animation: blink 0.5s forwards infinite;
+}
+
+.readonly {
+  pointer-events: none;
 }
 
 @keyframes blink {
