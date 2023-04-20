@@ -4,13 +4,14 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
-import { Modal } from 'shared/ui/Modal/Modal'
-import { userActions } from 'entities/User'
-import { useDispatch } from 'react-redux'
+import { getUserInited, userActions } from 'entities/User'
+import { useDispatch, useSelector } from 'react-redux'
 
 const App = () => {
   const { theme } = useTheme()
   const dispatch = useDispatch()
+  const isInited = useSelector(getUserInited)
+  console.log('isInited:', isInited)
 
   useEffect(() => {
     dispatch(userActions.initAuthData())
@@ -22,7 +23,7 @@ const App = () => {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {isInited && <AppRouter />}
         </div>
       </Suspense>
     </div>
