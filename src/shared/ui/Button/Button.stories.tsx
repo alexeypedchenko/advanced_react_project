@@ -37,6 +37,11 @@ Outline.args = {
   children: 'Outline',
   theme: ButtonTheme.OUTLINE,
 }
+export const OutlineRed = Template.bind({})
+OutlineRed.args = {
+  children: 'Outline Red',
+  theme: ButtonTheme.OUTLINE_RED,
+}
 
 export const OutlineM = Template.bind({})
 OutlineM.args = {
