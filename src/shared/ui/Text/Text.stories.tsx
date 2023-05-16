@@ -42,3 +42,16 @@ export const TextOnly = Template.bind({})
 TextOnly.args = {
   text: 'Some text...',
 }
+
+export const TextSizeMd = Template.bind({})
+TextSizeMd.args = {
+  title: 'Title',
+  text: 'text',
+  size: 'md',
+}
+export const TextSizeLg = Template.bind({})
+TextSizeLg.args = {
+  title: 'Title',
+  text: 'text',
+  size: 'lg',
+}

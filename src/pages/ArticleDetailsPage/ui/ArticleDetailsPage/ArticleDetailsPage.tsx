@@ -13,6 +13,10 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({
 }) => {
   const { id } = useParams<{ id: string }>()
 
+  if (__PROJECT__ === 'storybook') {
+    return <ArticleDetails id="1" />
+  }
+
   if (!id) {
     return (
       <div className={classNames('', {}, [className])}>

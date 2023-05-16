@@ -13,6 +13,7 @@ interface TextProps {
   text?: string
   theme?: TextTheme
   align?: 'left' | 'right' | 'center'
+  size?: 'md' | 'lg'
 }
 
 export const Text = memo(
@@ -22,6 +23,7 @@ export const Text = memo(
     text,
     theme = TextTheme.PRIMARY,
     align = 'left',
+    size = 'md',
   }: TextProps) => {
     return (
       <div
@@ -29,6 +31,7 @@ export const Text = memo(
           className,
           classes[theme],
           classes[align],
+          classes[size],
         ])}
       >
         {title && <p className={classes.title}>{title}</p>}
